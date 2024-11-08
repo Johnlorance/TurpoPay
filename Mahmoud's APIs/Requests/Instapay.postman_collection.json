@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "6b19e62d-836b-4a7b-8d0f-9a1e1fc6a0c7",
+		"name": "Instapay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38198350"
+	},
+	"item": [
+		{
+			"name": "ChangeDefault",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"User\": {\r\n        \"UserPhoneNumber\": \"0112233445\",\r\n        \"NewDefaultIpa\": \"JaneSmith_CIB@InstaPay\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.140.130:7080/ChangeDefault",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"140",
+						"130"
+					],
+					"port": "7080",
+					"path": [
+						"ChangeDefault"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AccountRegister",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"User\":{\r\n\r\n  \"bankName\": \"HSBC\",\r\n  \"cardNumber\": \"4444444444444444\",\r\n  \"cardPin\": \"4567\",\r\n  \"phoneNumber\": \"0123456789\",\r\n  \"User_ipa\": \"JohnDoe_HSBC@InstaPay\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.140.130:7080/AccountRegister",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"140",
+						"130"
+					],
+					"port": "7080",
+					"path": [
+						"AccountRegister"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserCheck",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n  \"bankName\": \"Banque Misr\",\r\n  \"cardNumber\": \"8765432187654321\",\r\n  \"cardPin\": \"1234\",\r\n  \"phoneNumber\": \"0112233445\",\r\n  \"User_ipa\": \"JaneSmith@InstaPay\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.140.130:7080/UserCheck",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"140",
+						"130"
+					],
+					"port": "7080",
+					"path": [
+						"UserCheck"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://192.168.140.130:7080/accountregistration/v1/userAccount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"User\":{\r\n  \"bankName\": \"Banque Misr\",\r\n  \"cardNumber\": \"8765432187654321\",\r\n  \"cardPin\": \"1234\",\r\n  \"phoneNumber\": \"0112233445\",\r\n  \"User_ipa\": \"JaneSmith@InstaPay\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.140.130:7080/accountregistration/v1/userAccount",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"140",
+						"130"
+					],
+					"port": "7080",
+					"path": [
+						"accountregistration",
+						"v1",
+						"userAccount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BankRegister",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bankName\": \"HSBC\",\r\n    \"api\": \"http://192.168.140.130:7080/HSBC\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.140.130:7080/BankRegister",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"140",
+						"130"
+					],
+					"port": "7080",
+					"path": [
+						"BankRegister"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AccountToAccount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"USERIPA\":\"JohnDoe@InstaPay\",\r\n        \"Amount\":500,\r\n        \"SenderBank\":\"Banque Misr\",\r\n        \"DestinationBank\": \"Banque Misr\",\r\n        \"ReceiverAccount\":\"2000000002\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.140.130:7080/Transaction",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"140",
+						"130"
+					],
+					"port": "7080",
+					"path": [
+						"Transaction"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
